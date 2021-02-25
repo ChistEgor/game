@@ -66,7 +66,7 @@ class Player:
 class Game(Player, Board):
     win_position = [[1, 4, 7], [2, 5, 8], [3, 6, 9], [7, 8, 9], [4, 5, 6], [1, 2, 3], [1, 5, 9], [7, 5, 3]]
 
-    def find_mark_x(self):  # нужно получить игрока с Х
+    def find_mark_x(self):
         self.player_x = ''.join([key for key, value in self.marks.items() if value == 'X'])
         return self.player_x
 
@@ -149,8 +149,6 @@ class Game(Player, Board):
             return False
 
     def run_game(self):
-        # self.drop_board()
-        # self.print_board()
         play = True
         while play:
             if self.player_1 == '':
@@ -196,4 +194,3 @@ class Game(Player, Board):
 if __name__ == "__main__":
     play = Game()
     play.run_menu()
-    print(type(play.player_x))
